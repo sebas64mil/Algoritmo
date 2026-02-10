@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GameMash — Ranking de Videojuegos</title>
+  <link rel="stylesheet" href="Style.css" />
+</head>
+
+<body>
+  <header class="wrap">
+    <h1>🎮 GameMash</h1>
+    <p class="sub">Comparación A/B para rankear videojuegos según tipo de jugador.</p>
+  </header>
+
+  <main class="wrap grid">
+
+    <section class="card">
+      <h2>1 Configura</h2>
+
+      <label for="segmentSelect">Tipo de jugador</label>
+      <select id="segmentSelect">
+        <option value="">Selecciona tipo...</option>
+        <option value="C">Jugador casual</option>
+        <option value="H">Jugador hardcore</option>
+        <option value="M">Multiplayer / competitivo</option>
+        <option value="S">Single player / historia</option>
+      </select>
+
+      <label for="contextSelect">Criterio de comparación</label>
+      <select id="contextSelect">
+        <option value="">Selecciona criterio...</option>
+        <option value="D">¿Cuál es más divertido?</option>
+        <option value="H">¿Cuál tiene mejor historia?</option>
+        <option value="M">¿Cuál es mejor para jugar con amigos?</option>
+        <option value="C">¿Cuál es más competitivo?</option>
+      </select>
+
+      <div class="row">
+        <button id="btnNewPair" class="ghost">🔁 Nuevo duelo</button>
+        <button id="btnReset" class="danger">🧹 Reiniciar</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2) Elige</h2>
+      <p id="question" class="question">—</p>
+
+      <div class="duel">
+        <button id="btnA" class="pick">
+          <span class="tag">A</span>
+          <span id="labelA" class="title">—</span>
+        </button>
+
+        <button id="btnB" class="pick">
+          <span class="tag">B</span>
+          <span id="labelB" class="title">—</span>
+        </button>
+      </div>
+
+      <p class="hint">Cada elección cambia el ranking.</p>
+
+      <div class="row">
+        <button id="btnShowTop" class="primary">🏆 Ver Top 10</button>
+        <button id="btnExport" class="ghost">⬇️ Exportar datos (CSV)</button>
+
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>3) Ranking</h2>
+      <div id="topBox" class="topbox"></div>
+      <p class="hint">Ranking filtrado por jugador y criterio.</p>
+    </section>
+
+  </main>
+
+  <footer class="wrap foot">
+    <small>Algoritmo A/B + Elo — decisiones humanas → ranking</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
